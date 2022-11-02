@@ -5,10 +5,10 @@ import Navbar from "./components/Navbar";
 import Alert from "./components/Alert";
 import TextForm from "./components/TextForm";
 // import Color from "./components/Color";
-import About from "./components/About";
+// import About from "./components/About";
 // import Color from "./components/Color";
 
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+// import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
   // we are passing state variable as a prop into the components
@@ -39,7 +39,13 @@ function App() {
   };
   return (
     <>
-      <Router>
+      <Navbar title="TextUtils" aboutText="About me" Mode={Mode} toggleMode={toggleMode} />
+      <Alert Alert={Alt} />
+      <div className="container my-3">
+        <TextForm showAlt={showAlt} heading="Enter the text to analyse below" Mode={Mode} />
+      </div>
+
+      {/* <Router>
         <Navbar title="TextUtils" aboutText="About me" Mode={Mode} toggleMode={toggleMode} />
         <Alert Alert={Alt} />
         <div className="container my-3">
@@ -48,7 +54,7 @@ function App() {
             <Route exact path="/" element={<TextForm showAlt={showAlt} heading="Enter the text to analyse below" Mode={Mode} />} />  
           </Routes>
         </div>
-      </Router>
+      </Router> */}
     </>
   );
 }
